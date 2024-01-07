@@ -21,3 +21,4 @@ if first_array and first_array[0] == 1:
 
 if not second_number:
     print("6")
+    
