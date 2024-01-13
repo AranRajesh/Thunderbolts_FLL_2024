@@ -31,14 +31,24 @@ bot = DriveBase(left_motor, right_motor, wheel_diameter=56, axle_track=80)
 
 print (bot.settings())
 bot.settings(300, 300, 100, 100)
+# Drive Until Stalled function:
+def drive_straight_until_stalled(speed = 600):
+    bot.drive(speed,0)
+    while (not bot.stalled()):
+         wait(100)
+    bot.stop()
+
 
 # Optionally, uncomment the line below to use the gyro for improved accuracy.
 bot.use_gyro(True)
 print('Initialized Bot')
-
+bot.straight(150)
+bot.turn(-55)
+drive_straight_until_stalled(400)
 left_arm_motor.run_angle(5000,3700)
 right_arm_motor.run_angle(500, -550)
 bot.straight(-430)
 bot.turn(50)
-# For the code to work, you have to start it with the funnel fully in the craft creator
-# It's not completed yet...
+
+# For the code to work, the alignment has to be 20 from right home area!
+# It's completed! Note: This was coded on the second table!
