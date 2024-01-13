@@ -1,0 +1,28 @@
+
+hub = PrimeHub()
+timer=StopWatch()
+left_motor = Motor(Port.A, Direction.COUNTERCLOCKWISE)
+right_motor = Motor(Port.B)
+arm_1=Motor(Port.C)
+arm_2=Motor(Port.D)
+
+drive_base = DriveBase(left_motor, right_motor, wheel_diameter=56, axle_track=80)
+drive_base.use_gyro(True)
+drive_base.settings(300,600,600)
+
+#drive_base.straight(535)
+#drive_base.turn(25)
+#drive_base.straight(25)
+#drive_base.turn(-25)
+#drive_base.straight(-20)
+#drive_base.turn(15)
+#drive_base.curve(180,-30)
+#drive_base.straight(-600)
+
+drive_base.straight(600)
+arm_2.run_angle(-3000, 2000)
+# drive_base.straight(-30)
+drive_base.turn(50)
+drive_base.turn(-30)
+
+drive_base.straight(-600)
