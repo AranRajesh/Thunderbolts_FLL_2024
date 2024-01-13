@@ -1,3 +1,8 @@
+from pybricks.hubs import PrimeHub
+from pybricks.pupdevices import Motor, ColorSensor, UltrasonicSensor, ForceSensor
+from pybricks.parameters import Button, Color, Direction, Port, Side, Stop
+from pybricks.robotics import DriveBase
+from pybricks.tools import wait, StopWatch
 
 hub = PrimeHub()
 timer=StopWatch()
@@ -10,19 +15,16 @@ drive_base = DriveBase(left_motor, right_motor, wheel_diameter=56, axle_track=80
 drive_base.use_gyro(True)
 drive_base.settings(300,600,600)
 
-#drive_base.straight(535)
-#drive_base.turn(25)
-#drive_base.straight(25)
-#drive_base.turn(-25)
-#drive_base.straight(-20)
-#drive_base.turn(15)
-#drive_base.curve(180,-30)
-#drive_base.straight(-600)
-
 drive_base.straight(600)
-arm_2.run_angle(-3000, 2000)
-# drive_base.straight(-30)
-drive_base.turn(50)
-drive_base.turn(-30)
+arm_2.run_angle(-3000, 1000)
+drive_base.straight(-47)
+drive_base.curve(-50,50)
+drive_base.straight(153)
+drive_base.curve(30,55)
+drive_base.turn(-25)
+drive_base.straight(185)
+drive_base.straight(-900)
 
-drive_base.straight(-600)
+print(timer.time()/1000)
+
+
