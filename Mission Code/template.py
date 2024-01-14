@@ -146,7 +146,7 @@ def fast_turn(angle, speed):
         left_wheel_motor.stop()
         right_wheel_motor.stop()
 
-print ('Init Complete!')
-print (f'Battery Level {hub.battery.voltage()}')
+init()
+
 #=========================================================================================
 # Write your code here:
