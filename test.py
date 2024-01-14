@@ -84,13 +84,3 @@ init()
 #=========================================================================================
 # Write your code here:
 
-# Alignment: 10 cm from right 
-# Coded on 2nd Table, Pending testing on first table
-bot.straight(330)
-bot.turn(-80)
-bot.straight(150)
-bot.curve(150,-65)
-bot.turn(-95)
-bot.straight(300)
-print(timer_all.time()/1000)
-
