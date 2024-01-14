@@ -43,12 +43,18 @@ def drive_straight_until_stalled(speed = 600):
 bot.use_gyro(True)
 print('Initialized Bot')
 bot.straight(150)
-bot.turn(-40)
-drive_straight_until_stalled(400)
+bot.turn(-45)
+bot.drive(400, 0)
+wait(2000)
+bot.stop()
 left_arm_motor.run_angle(5000,-3700)
 right_arm_motor.run_angle(500, -550)
-bot.straight(-430)
-bot.turn(50)
+bot.drive(-700,5)
+wait(2000)
+bot.stop()
+
+print(timer.time()/1000)
+
 
 # For the code to work, the alignment has to be 20 from right home area!
 # It's completed! Note: This was coded on the second table!
