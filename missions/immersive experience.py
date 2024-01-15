@@ -1,0 +1,16 @@
+print("hello")
+hub = PrimeHub()
+leftWheelMotor = Motor(Port.A, Direction.COUNTERCLOCKWISE)
+rightWheelMotor = Motor(Port.B)
+bot = DriveBase(leftWheelMotor,rightWheelMotor,wheel_diameter=56, axle_track=80)
+bot.settings(300,300, 233, 300)
+bot.use_gyro(True)
+
+# Initialize Arm Motors
+rightArmMotor = Motor(Port.D, Direction.CLOCKWISE)
+leftArmMotor = Motor(Port.C, Direction.CLOCKWISE, [12,36])
+bot.straight(430)
+bot.turn(-60)
+bot.straight(600)
+bot.turn(-33)
+bot.straight(150)
