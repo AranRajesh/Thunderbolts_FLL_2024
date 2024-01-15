@@ -36,15 +36,20 @@ bot.settings(300, 300, 50, 50)
 bot.use_gyro(True)
 print('Initialized Bot')
 
-bot.straight(130)
-bot.curve(100,80)
-bot.straight(350)
+bot.straight(-130)
+bot.curve(-100,-80)
+bot.straight(-350)
 bot.turn(-20)
 bot.turn(-20)
-bot.straight(380)
-bot.turn(-32)
-bot.drive(230,0)
+bot.straight(-410)
+bot.turn(-15)
+bot.straight(-150)
+bot.straight(400)
+bot.turn(-25)
+bot.drive(-230,0)
 wait(2500)
 bot.stop()
 
-
+# Alignment is 20cm left home area, with the robot facing backward!
+# Not coming back yet, needs to be finished.
+# Coded on second table
