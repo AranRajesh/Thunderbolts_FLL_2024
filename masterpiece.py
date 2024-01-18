@@ -1,55 +1,35 @@
-from pybricks.hubs import PrimeHub
-from pybricks.pupdevices import Motor, Light, ColorLightMatrix
-from pybricks.parameters import Port, Direction, Color, Stop
-from pybricks.geometry import Axis
-from pybricks.robotics import DriveBase
+from primeBot import primeBot
 from pybricks.tools import wait, StopWatch
-from pybricks.pupdevices import ColorSensor
-hub = PrimeHub()
-# Initialize the timer
-timer = StopWatch()
-timer.reset()
+
+###############################################
+## Write your code in this function 
+## Note you can rename this if you want 
+#----------------------------------------------
+
+def masterpiece(bot: primeBot):
+    bot.straight(-130)
+    bot.curve(-100,-80)
+    bot.straight(-350)
+    bot.turn(-20)
+    bot.turn(-20)
+    bot.straight(-410)
+    bot.turn(-15)
+    bot.straight(-150)
+    bot.straight(400)
+    bot.turn(-25)
+    bot.drive(-230,0)
+    wait(2500)
+    bot.stop()
 
 
-# Initialize both motors. In this example, the motor on the
-# left must turn counterclockwise to make the robot go forward.
-left_motor = Motor(Port.A, Direction.COUNTERCLOCKWISE)
-right_motor = Motor(Port.B)
-# Initialize the color sensors
+if __name__ == "__main__": 
+    missionFunction = masterpiece
+# ----------------------------------------------
+###############################################
+## You don't need to modify anything  below this line
 
-right_sensor = ColorSensor(Port.F)
-left_sensor = ColorSensor(Port.E)
+    timer = StopWatch()
+    myBot = primeBot()
+    missionFunction(myBot)
+    print(f"completed in {timer.time()/1000} s")
 
-# Initialize the arm motors
-right_arm_motor = Motor(Port.C)
-left_arm_motor = Motor(Port.D)
-
-# Initialize the drive base. In this example, the wheel diameter is 56mm.
-# The distance between the two wheel-ground contact points is 112mm.
-bot = DriveBase(left_motor, right_motor, wheel_diameter=56, axle_track=80)
-
-
-print (bot.settings())
-bot.settings(300, 300, 50, 50)
-
-# Optionally, uncomment the line below to use the gyro for improved accuracy.
-bot.use_gyro(True)
-print('Initialized Bot')
-
-bot.straight(-130)
-bot.curve(-100,-80)
-bot.straight(-350)
-bot.turn(-20)
-bot.turn(-20)
-bot.straight(-410)
-bot.turn(-15)
-bot.straight(-150)
-bot.straight(400)
-bot.turn(-25)
-bot.drive(-230,0)
-wait(2500)
-bot.stop()
-
-# Alignment is 20cm left home area, with the robot facing backward!
-# Not coming back yet, needs to be finished.
-# Coded on second table

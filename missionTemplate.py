@@ -22,5 +22,5 @@ if __name__ == "__main__":
 
     timer = StopWatch()
     myBot = primeBot()
-    missionFunction()
+    missionFunction(myBot)
     print(f"completed in {timer.time()/1000} s")
