@@ -9,23 +9,41 @@ from pybricks.tools import wait, StopWatch
 
 def hologram (bot: primeBot):
     bot.settings(300,600,600)
+
+    #Drive towards Hologram Mission
     bot.straight(600)
+
+    # Rotate arm to move the left side shaft
     bot.right_arm_motor.run_angle(-3000, 1000)
+
+    #Drive towards moving the Stage
     bot.straight(-47)
     bot.curve(-50,50)
-    bot.straight(190)
+    bot.straight(153)
     bot.curve(30,55)
-    bot.turn(-78)
-    bot.straight(420)
-    bot.turn(38)
     bot.turn(-20)
+
+    #Drive towards dropping off audience and exert Sound Manager Sam
+    bot.straight(110)
+    bot.left_arm_motor.run_angle(-90, 80)
+    bot.straight(-120)
+
+    # Get ready to move towards augmented reality
+    bot.turn(-55)
+    bot.straight(450)
+    bot.turn(50)
+    bot.straight(-30)
+    bot.turn(-20)
+
+    # Pull Augmented Reality Lever
     bot.curve(-200,30)
-    bot.straight(-210)
+    bot.straight(-490)
+
+    # Come back to home area
     bot.turn(40)
-    bot.straight(-220)
-    bot.turn(20)
+    bot.straight(-240)
+    bot.turn(40)
     bot.straight(-680)
-    print(timer.time()/1000)
     return
 
 
