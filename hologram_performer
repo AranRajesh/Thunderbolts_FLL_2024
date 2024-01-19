@@ -1,30 +1,42 @@
-#Updated Code
-hub = PrimeHub()
-timer=StopWatch()
-left_motor = Motor(Port.A, Direction.COUNTERCLOCKWISE)
-right_motor = Motor(Port.B)
-arm_1=Motor(Port.C)
-arm_2=Motor(Port.D)
 
-drive_base = DriveBase(left_motor, right_motor, wheel_diameter=56, axle_track=80)
-drive_base.use_gyro(True)
-drive_base.settings(300,600,600)
+from primeBot import primeBot
+from pybricks.tools import wait, StopWatch
 
-drive_base.straight(600)
-arm_2.run_angle(-3000, 1000)
-drive_base.straight(-47)
-drive_base.curve(-50,50)
-drive_base.straight(190)
-drive_base.curve(30,55)
-drive_base.turn(-78)
-drive_base.straight(420)
-drive_base.turn(38)
-drive_base.turn(-20)
-drive_base.curve(-200,30)
-drive_base.straight(-210)
-drive_base.turn(40)
-drive_base.straight(-220)
-drive_base.turn(20)
-drive_base.straight(-680)
-print(timer.time()/1000)
+###############################################
+## Write your code in this function 
+## Note you can rename this if you want 
+#----------------------------------------------
+
+def hologram (bot: primeBot):
+    bot.settings(300,600,600)
+    bot.straight(600)
+    bot.right_arm_motor.run_angle(-3000, 1000)
+    bot.straight(-47)
+    bot.curve(-50,50)
+    bot.straight(190)
+    bot.curve(30,55)
+    bot.turn(-78)
+    bot.straight(420)
+    bot.turn(38)
+    bot.turn(-20)
+    bot.curve(-200,30)
+    bot.straight(-210)
+    bot.turn(40)
+    bot.straight(-220)
+    bot.turn(20)
+    bot.straight(-680)
+    print(timer.time()/1000)
+    return
+
+
+if __name__ == "__main__": 
+    missionFunction = hologram
+# ----------------------------------------------
+###############################################
+## You don't need to modify anything  below this line
+
+    timer = StopWatch()
+    myBot = primeBot()
+    missionFunction(myBot)
+    print(f"completed in {timer.time()/1000} s")
 
